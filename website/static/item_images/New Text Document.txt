@@ -1,0 +1,67 @@
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("
+Gothic Cap Sleeve Lace Trim Cabaret Corset Top In Purple Maze", "Rayon, Polyster", 2900, "M", "Purple/Black", "women1.jpg", 3, "Womens", "Dress");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Lace Sexy Dress With Cat Ear Shape On Top", "DW139", 4200, "S, M", "Black", "women2.jpg", 7, "Womens", "Dress");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Faux Corset Look Gothic Bell Sleeve Hook & Eye Corsetta Top In Indigo", "Polyseter, Spandex", 3300, "S, M", "Black/Indigo", "women3.jpg", 5, "Womens", "Dress");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Punk Goth Women's Faux Leather Detachable Lower Edge Jacket", "Faux Leather", 3200, "S, M", "Black", "women4.jpg", 5, "Womens", "Jacket");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Steampunk Skeleton Cross Print Ankle Length Leggings", "Spandex, Polyester", 1300, "S, M", "White/Black", "women5.jpg", 5, "Womens", "Bottom");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Pastel Punk Lunar Oversize Hood Sweatshirt", "Polyester", 1100, "S, M", "Black", "women6.jpg", 10, "Womens", "Sweatshirt");
+
+
+
+
+Mens: 
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Men Bondage Gothic Cyber Pant Chain Techno Rock Punk Shorts Trouser Pants", "Cotton", 3800, "S, M, L", "Black", "men1.jpg", 10, "Mens", "Pants");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Men Gothic Coat Trench Army Style Coat Cotton Jacket", "Cotton", 3900, "S, M, L", "Black", "men2.jpg", 10, "Mens", "Pants");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Punk Vintage Retro Irregular Length Zipper Strap Hooded Coat", "Polyester", 2900, "S, M, L", "Black", "men3.jpg", 10, "Mens", "Pants");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Streetwear Goth British Double Breasted Wool Blend Men Pea Coat Jacket", "Polyester", 2900, "S, M, L", "Black", "men4.jpg", 15, "Mens", "Pants");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Men's Military Trench Coat", "Polyester", 4300, "S, M, L", "Black", "men5.jpg", 5, "Mens", "Pants");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Victorian Men's Velvet Tailcoat", "Polyester", 5800, "S, M, L", "Black", "men6.jpg", 2, "Mens", "Pants");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TOP: 
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("
+Deep Space Starry Blouse", "Handmade, Cotton, Polyster", 3000, "S, M", "Purple/Pink", "kids5.jpg", 10, "Kids", "Dress");
+
+
+
+
+
+
+KIDS:
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Black Hawaiian Skull Kids Shirt", "Handmade, Cotton", 1700, "S", "Black, White", "kids1.jpg", 20, "Kids", "Top");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Stay Weird - Spooky, magic shirt for Boys and Girls", "Handmade, Water Based Ink", 1200, "S, M", "Solid Pink/White", "kids.jpg", 15, "Kids", "Top");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Gothic Baby Bodysuit", "Handmade, Polyester", 2500, "XS, S", "Black", "kids2.jpg", 3, "Kids", "Bodysuit");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Zombie Cat T-Shirt Kids Boys Girls", "Handmade, Cotton", 700, "XS, S", "Black", "kids3.jpg", 50, "Kids", "Top");
+
+INSERT into item (title, description, price, size, color, image_link, number, category, sub_category) VALUES ("Baphomet Symbol T-Shirt", "Handmade, Cotton", 700, "XS, S", "Black", "kids4.jpg", 50, "Kids", "Top");
+
+
+
+

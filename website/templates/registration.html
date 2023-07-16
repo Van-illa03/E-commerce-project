@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SignUp Page</title>
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='logo.png')}}" />
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <style type="text/css">
+    .nav-item{
+      padding-right: 30px;
+    }
+    #container {
+      padding-top: 100px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-size:12px;
+    }
+
+    .btn {
+      background-color: #000080;
+      color: white;
+      margin-top: 20px;
+      width: 100%;
+      height: 40px;
+    }
+    .page-footer
+  	{
+  		font-size: 18px;
+	  	background: #2d3246;
+	  	color: white;
+	  	font-weight: bolder;
+
+  	}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+    style="font-weight: bolder;background-color: white; font-size: 18px; " role="navigation">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="align-content: right;">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+
+          <a class="nav-link" href="/index"><i class='fas fa-home'></i> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><i class='fas fa-phone'></i> Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class='fas fa-info-circle'></i> About Us</a>
+        </li>
+
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="/view_cart"><i class="fas fa-cart-plus"></i> View Cart</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/logout"><i class='fas fa-user'></i> Logout</a>
+        </li>
+
+        {% else %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="/login"><i class='fas fa-user'></i> Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/registration"><i class='fas fa-user-plus'></i> Sign Up</a>
+        </li>
+
+        {% endif %}
+
+      </ul>
+
+    </div>
+  </nav>
+  <br /><br /><br /><br /><br /><br /><br />
+	<div class="container-fluid" style="text-align: center; font-weight: bolder;">
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		{% for category, message in messages %}
+		<div class="alert alert-warning ">
+			<h1>{{ message }}
+			<button type="button" class="close" data-dismiss="alert" aria-label="close">
+					<span aria-hidden="true">&times;</span>
+			</button></h1>
+		</div>
+		{% endfor %}
+		{% endif %}
+		{% endwith %}
+	</div>
+
+  <div class="container" id="container">
+    <div class="row">
+
+      <div class="col-lg-5">
+        <img
+          src="https://image.freepik.com/free-vector/seasonal-sale-discounts-presents-purchase-visiting-boutiques-luxury-shopping-price-reduction-promotional-coupons-special-holiday-offers-vector-isolated-concept-metaphor-illustration_335657-2766.jpg"
+          style="max-width: 500px;  height:400px; padding-left: 20px; ">
+      </div>
+
+      <div class="col-lg-5">
+        <h1 style="color: #000080; font-weight: bolder; text-indent: 65px;"><b>CREATE NEW ACCOUNT</b></h1><br /><br />
+        <form role="form" method="POST" action="">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+            {{form.username.label(class="form-control-label")}}
+            {% if form.username.errors %}
+            {{form.username(class="form-control is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.username.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+            {% else %}
+
+            {{form.username(class="form-control")}}
+            {% endif %}
+          </div><br />
+          <div class="form-group">
+            {{form.email.label(class="form-control-label")}}
+            {% if form.email.errors %}
+            {{form.email(class="form-control is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.email.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+            {% else %}
+
+            {{form.email(class="form-control")}}
+            {% endif %}
+          </div><br />
+          <div class="form-group">
+            {{form.mobile.label(class="form-control-label")}}
+            {% if form.mobile.errors %}
+            {{form.mobile(class="form-control is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.mobile.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+            {% else %}
+
+            {{form.mobile(class="form-control")}}
+            {% endif %}
+          </div><br />
+          <div class="form-group">
+            {{form.password.label(class="form-control-label")}}
+            {% if form.password.errors %}
+            {{form.password(class="form-control is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.password.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+            {% else %}
+
+            {{form.password(class="form-control")}}
+            {% endif %}
+          </div><br />
+          <div class="form-group">
+            {{form.confirmpassword.label(class="form-control-label")}}
+            {% if form.confirmpassword.errors %}
+            {{form.confirmpassword(class="form-control is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.confirmpassword.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+            {% else %}
+
+            {{form.confirmpassword(class="form-control")}}
+            {% endif %}
+          </div>
+
+          <div style="text-align: center;">
+            <a href="/login">Already have an account?</a>
+          </div>
+          {{form.submit(class="btn btn-default")}}
+
+        </form>
+      </div>
+    </div>
+    <br /><br /><br />
+  </div>
+  <br /><br /><br />
+  <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color: black;">
+    <div class="container text-center text-md-left">
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <h3 class="font-weight-bold text-uppercase mt-3 mb-4">E-Commerce Website</h3>
+          <p>Happiness is not in money, but in shopping.</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-2 mx-auto">
+          <h3 class="font-weight-bold text-uppercase mt-3 mb-4">Courses</h3>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Mens Clothing</a>
+            </li>
+            <li>
+              <a href="#!">Women's Clothing</a>
+            </li>
+            <li>
+              <a href="#!">Kid's Clothing</a>
+            </li>
+           
+          </ul>
+  
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-2 mx-auto">
+  
+          <h3 class="font-weight-bold text-uppercase mt-3 mb-4">Source</h3>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Home</a>
+            </li>
+            <li>
+              <a href="#!">About Us</a>
+            </li>
+            <li>
+              <a href="#!">Contact Us</a>
+            </li>
+           
+          </ul>
+  
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+      </div>
+    </div>
+    <hr>
+    <hr>
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="#">E-commerce.com</a>
+    </div>
+  </footer> 
+
+</body>
+
+</html>
